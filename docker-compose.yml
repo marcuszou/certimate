@@ -1,0 +1,12 @@
+services:
+  certimate:
+    container_name: certimate_box
+    image: usual2970/certimate:latest
+    ports:
+      - 8090:8090
+    volumes:
+      - ./data:/var/lib/certimate
+      - ./config:/etc/certimate
+    environment:
+      - TZ=America/Edmonton
+      - VAULT_ADDR=https://vault.example.com
